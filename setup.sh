@@ -7,7 +7,7 @@
 
 source ./options.conf
 
-# Detect distribution. Debian or Ubuntu
+# Detect distribution. Debian or Ubuntu or Ubuntu 16
 DISTRO=`lsb_release -i -s`
 # Distribution's release. Squeeze, wheezy, precise etc
 RELEASE=`lsb_release -c -s`
@@ -15,6 +15,8 @@ if  [ $DISTRO = "" ]; then
     echo -e "\033[35;1mPlease run 'aptitude -y install lsb-release' before using this script.\033[0m"
     exit 1
 fi
+
+# Include write to install aptitude in Debian
 
 
 #### Functions Begin ####
